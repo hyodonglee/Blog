@@ -16,7 +16,7 @@ const activeStyle = {
 }
 
 const NavLink = ({ children, to }) => (
-    <Link to={to} activeStyle={activeStyle} style={linkStyle} fade duration = {1}>
+    <Link to={to} activeStyle={activeStyle} style={linkStyle}>
         {children}
     </Link>
 )
@@ -35,6 +35,9 @@ function Navbar() {
                     </li>
                     <li class="nav-item mr-5">
                         <NavLink class="nav-link" to = "/blog">Blog</NavLink>
+                    </li>
+                    <li class="nav-item mr-5">
+                        <NavLink class="nav-link" to = "/algorithm">Algorithm</NavLink>
                     </li>
                     <li class="nav-item mr-5">
                         <NavLink class="nav-link" to = "/tags">Tags</NavLink>

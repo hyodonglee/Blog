@@ -25,7 +25,7 @@ const Blog = () => {
   return (
     <Page>
       <Helmet>
-        <title>Blog | The 404 Blog</title>
+        <title>Blog | Dong's Blog</title>
       </Helmet>
       <div className="container">
         <div className="col">

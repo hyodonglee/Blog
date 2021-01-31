@@ -13,7 +13,6 @@ const TagComponent = ({ pageContext, data }) => {
         <div className="container">
             <AniLink
                 to="/tags"
-                fade
                 duration={.5}
             >
                 <img src="https://img.icons8.com/material-rounded/48/00bcd4/back.png" width="48" alt="back-icon" className="mb-4" />

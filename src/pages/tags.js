@@ -52,7 +52,6 @@ const Tags = () => {
                     Array.from(new Set(TagArray)).map(
                         (tagItem, index) => {
                             return <Link
-                                fade
                                 duration = {.5}
                                 to={"/tags/" + tagItem}
                                 className="btn mr-4 btn-info my-3">

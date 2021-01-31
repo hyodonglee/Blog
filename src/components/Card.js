@@ -9,7 +9,7 @@ const authorLinkStyle = {
 }
 
 const Author = ({ children, to }) => (
-    <AniLink style={authorLinkStyle} to={to} className="font-weight-bold" fade>
+    <AniLink style={authorLinkStyle} to={to} className="font-weight-bold" >
         {children}
     </AniLink>
 )
@@ -23,7 +23,7 @@ const Card = ({ title, description, timeStamp, authorName, slug }) => {
         <AniLink
             style={cardLinkStyle}
             to={slug}
-            cover
+            //to="blogpost.js"
             bg="#00BCD4"
 
         >

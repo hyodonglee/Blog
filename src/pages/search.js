@@ -16,7 +16,7 @@ function Authors() {
     return (
         <Page>
             <Helmet>
-                <title>Authors | The 404 Blog</title>
+                <title>Authors | Dong's Blog</title>
             </Helmet>
             <div className="container">
                 <Search searchIndex={data.siteSearchIndex.index} />

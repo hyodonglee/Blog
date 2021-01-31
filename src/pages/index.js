@@ -8,7 +8,7 @@ function index() {
   return (
     <Page>
       <Helmet>
-        <title>Home | The 404 Blog</title>
+        <title>Home | Dong's Blog</title>
       </Helmet>
       <div className="container abs">
         <div className="row">

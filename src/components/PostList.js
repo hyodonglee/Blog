@@ -2,6 +2,7 @@ import React from "react"
 import Card from "../components/Card"
 import { useStaticQuery, graphql, } from "gatsby"
 import Link from "gatsby-plugin-transition-link/AniLink";
+//import Link from "gatsby"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -34,7 +35,7 @@ export default () => {
           />)
         )
       }
-      <Link fade className="my-3 float-right btn text-info shadow-sm" to="blog" duration = {.5}>
+      <Link className="my-3 float-right btn text-info shadow-sm" to="blog" >
         View All →
       </Link>
     </div>
