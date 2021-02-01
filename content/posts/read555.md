@@ -1,5 +1,5 @@
 ---
-slug: "/blog/pipe"
+slug: "/blog/qwert"
 date: "2021-01-31"
 title: "17070. 파이프 옮기기 1, 2"
 author: "이효동"

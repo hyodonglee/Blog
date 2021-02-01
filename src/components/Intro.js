@@ -6,13 +6,17 @@ import NLink from "gatsby-plugin-transition-link/AniLink";
 
 
 const linkStyle = {
-    color: "#00F0FF",
+    color: "#0F0FF0",
     fontSize: "24px",
     fontWeight: "600"
 }
 
 const activeStyle = {
     color: "#F0F"
+}
+
+const titleStyle={
+    textAlign:'center'
 }
 
 const NavLink = ({ children, to }) => (
@@ -26,12 +30,23 @@ function Intro() {
 
     return (
         <div className="container my-4">
-            <h2 className="card-title text-info font-weight-bold">Hyodong's Blog</h2>
-            <p className="card-subtitle mt-2">안녕하세요. 효동이의 개인 블로그에 오신 것을 환영합니다.</p>
-            <Link className="btn btn-info my-3" to="about">Who is Hyodong?</Link>
+            {/* <h2 className="card-title text-danger font-weight-bold">Hyodong's Blog</h2> */}
+            <h2 className="card-title font-weight-bold" style={titleStyle}>Dong's Blog</h2>
+            <img
+                            width="250"
+                            className="rounded-circle author-img mx-4 mb-4"
+                            src="https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
+                            alt="author-img" />
+
+            <p className="card-subtitle mt-2">
+                안녕하세요.<br/>
+                이효동입니다. <br/>
+                저의 블로그에 오신 것을 환영합니다.
+            </p>
+            <Link className="btn btn-dark my-3" to="about">Who am I?</Link>
 
             <hr />
-            <h4>Outline</h4>
+            {/* <h4>Outline</h4>
             <ul class="list-group my-3">
                 <li class="list-group-item">
                     <NavLink class="nav-link" to="/">Home</NavLink>
@@ -46,7 +61,7 @@ function Intro() {
                     <NavLink class="nav-link" to="/search">Search</NavLink>
                 </li>
             </ul>
-            <hr/>
+            <hr/> */}
 
             <h4>Built with</h4>
             <a href="https://reactjs.org/">

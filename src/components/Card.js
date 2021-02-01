@@ -5,7 +5,7 @@ const titleStyle = {
     fontWeight: "700",
 }
 const authorLinkStyle = {
-    color: "#00BCD4"
+    color: "#1F344F"
 }
 
 const Author = ({ children, to }) => (
@@ -23,7 +23,6 @@ const Card = ({ title, description, timeStamp, authorName, slug }) => {
         <AniLink
             style={cardLinkStyle}
             to={slug}
-            //to="blogpost.js"
             bg="#00BCD4"
 
         >

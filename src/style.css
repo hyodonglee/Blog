@@ -3,7 +3,7 @@
     --card-color: #FFF;
     --card-text-color: #000;
     --bg-color: white;
-    --cyan-color: #FFE08C;
+    --cyan-color: #2F4E77;
     --block-quote-bg : #F9F9F9;
 }
 
@@ -31,7 +31,7 @@ html body {
 }
 
 .dark {
-    background-color: #12181B;
+    background-color: #282C35;
     color: #B2BECD;
     --card-color: #414141;
     --card-text-color: #FFF;

@@ -7,7 +7,6 @@ import useTheme from '../useTheme'
 import TagList from "./TagList";
 
 import Page from '../components/PageLayout'
-import Intro from '../components/Intro';
 
 
 const Temp = ({ data, pageContext }) => {

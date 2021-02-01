@@ -4,7 +4,7 @@ import Page from '../components/PageLayout'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
 
-const Blog = () => {
+const Algorithm = () => {
   const data = useStaticQuery(graphql`
     {
         allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 10) {
@@ -46,4 +46,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Algorithm

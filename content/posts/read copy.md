@@ -1,5 +1,5 @@
 ---
-slug: "/blog/pipe"
+slug: "/blog/min"
 date: "2021-01-31"
 title: "sample2. ㅇㅇㅇ"
 author: "이효동"

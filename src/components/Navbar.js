@@ -6,13 +6,13 @@ import Link from "gatsby-plugin-transition-link/AniLink";
 
 
 const linkStyle = {
-    color: "#00F0FF",
+    color: "#FFFFFF",
     fontSize : "24px",
     fontWeight : "600"
 }
 
 const activeStyle = {
-    color: "#FFF"
+    color: "#86E57F"
 }
 
 const NavLink = ({ children, to }) => (
@@ -23,7 +23,7 @@ const NavLink = ({ children, to }) => (
 
 function Navbar() {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light shadow-sm " style={{ backgroundColor: "#00BCD4" }}>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm " style={{ backgroundColor: "#2F4E77" }}>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

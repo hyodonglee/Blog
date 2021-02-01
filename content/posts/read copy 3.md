@@ -1,5 +1,5 @@
 ---
-slug: "/blog/pipe"
+slug: "/blog/girin"
 date: "2021-01-31"
 title: "sample5. 아 그만"
 author: "이효동"
