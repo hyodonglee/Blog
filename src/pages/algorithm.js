@@ -6,13 +6,18 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Algorithm = () => {
   const data = useStaticQuery(graphql`
-    {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 10) {
-          edges {
+    query{
+        allMarkdownRemark(
+          sort: {fields: frontmatter___date, order: DESC}, limit: 10
+          filter: { frontmatter: { categories: {in:"algorithm"} }}
+          ) {
+          
+            edges {
             node {
               frontmatter {
-                title
+                title                
                 slug
+                categories
                 date(formatString: "MMMM DD, YYYY")
                 author
                 description

@@ -44,7 +44,7 @@ const Tags = () => {
     return (
         <Page>
             <Helmet>
-                <title>Tags | The 404 Blog</title>
+                <title>Tags | Dong's Blog</title>
             </Helmet>
             <div className="container">
                 <h1>Tags</h1>
@@ -54,7 +54,7 @@ const Tags = () => {
                             return <Link
                                 duration = {.5}
                                 to={"/tags/" + tagItem}
-                                className="btn mr-4 btn-info my-3">
+                                className="btn mr-4 btn-dark my-3">
                                 #{tagItem}
                             </Link>
                         }

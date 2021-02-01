@@ -1,10 +1,11 @@
 ---
-slug: "/blog/girin"
+slug: "/blog/algorithm/stop"
 date: "2021-01-31"
 title: "sample5. 아 그만"
 author: "이효동"
-tags: ["algorithm" , "bootstrap"]
-description: " 샘플 ㅇㅁ너랴ㅐㅇ너"
+categories: ["algorithm"]
+tags: ["algorithm" , "baekjoon", "stop"]
+description: " test2"
 authorImg: "https://avatars3.githubusercontent.com/u/21126965?s=460&v=4"
 ---
 

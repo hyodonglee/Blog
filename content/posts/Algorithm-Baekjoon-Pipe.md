@@ -1,10 +1,11 @@
 ---
-slug: "/blog/pipe"
+slug: "/blog/algorithm/pipe"
 date: "2021-01-31"
-title: "sample3. 아 그만"
+title: "sample3. 테스트"
 author: "이효동"
-tags: ["algorithm" , "bootstrap"]
-description: " 샘플 ㅇㅁ너랴ㅐㅇ너"
+categories: ["algorithm"]
+tags: ["algorithm" , "baekjoon", "dfs"]
+description: "test"
 authorImg: "https://avatars3.githubusercontent.com/u/21126965?s=460&v=4"
 ---
 

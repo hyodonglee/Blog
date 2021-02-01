@@ -6,7 +6,7 @@ import NLink from "gatsby-plugin-transition-link/AniLink";
 
 
 const linkStyle = {
-    color: "#0F0FF0",
+    color: "#55749D",
     fontSize: "24px",
     fontWeight: "600"
 }
@@ -39,8 +39,7 @@ function Intro() {
                             alt="author-img" />
 
             <p className="card-subtitle mt-2">
-                안녕하세요.<br/>
-                이효동입니다. <br/>
+                안녕하세요. 이효동입니다. <br/>
                 저의 블로그에 오신 것을 환영합니다.
             </p>
             <Link className="btn btn-dark my-3" to="about">Who am I?</Link>

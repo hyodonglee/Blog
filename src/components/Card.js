@@ -5,7 +5,7 @@ const titleStyle = {
     fontWeight: "700",
 }
 const authorLinkStyle = {
-    color: "#1F344F"
+    color: "#55749D"
 }
 
 const Author = ({ children, to }) => (

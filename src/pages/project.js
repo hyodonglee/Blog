@@ -4,14 +4,18 @@ import Page from '../components/PageLayout'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
 
-const Blog = () => {
+const Project = () => {
   const data = useStaticQuery(graphql`
-    {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 10) {
-          edges {
+    query{
+        allMarkdownRemark(
+          sort: {fields: frontmatter___date, order: DESC}, limit: 10
+          filter: { frontmatter: { categories: {in:"project"} }}
+          ) {
+          
+            edges {
             node {
               frontmatter {
-                title
+                title                
                 slug
                 categories
                 date(formatString: "MMMM DD, YYYY")
@@ -47,4 +51,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Project

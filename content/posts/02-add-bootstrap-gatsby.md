@@ -1,9 +1,10 @@
 ---
-slug: "/blog/add-bootstrap-to-gatsby"
+slug: "/blog/etc/add-bootstrap-to-gatsby"
 date: "2019-07-13"
 title: "How to add Bootstrap to Gatsby"
 author: "Mohan"
-tags: ["gatsby" , "bootstrap"]
+categories: []
+tags: []
 description: "In this post, you will understand how to add bootstrap to your gatsby project"
 authorImg: "https://avatars3.githubusercontent.com/u/21126965?s=460&v=4"
 ---

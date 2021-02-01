@@ -81,6 +81,8 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
 
+      // create a page for each category
+
       tags.forEach((tag, index) => {
         createPage({
           path: "/tags/" + tag,

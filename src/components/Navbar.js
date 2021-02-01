@@ -40,6 +40,9 @@ function Navbar() {
                         <NavLink class="nav-link" to = "/algorithm">Algorithm</NavLink>
                     </li>
                     <li class="nav-item mr-5">
+                        <NavLink class="nav-link" to = "/project">Project</NavLink>
+                    </li>
+                    <li class="nav-item mr-5">
                         <NavLink class="nav-link" to = "/tags">Tags</NavLink>
                     </li>
                     <li class="nav-item mr-5">
