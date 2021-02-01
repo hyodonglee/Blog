@@ -35,12 +35,15 @@ const Temp = ({ data, pageContext }) => {
       <Helmet>
         <title>{frontmatter.title}</title>
       </Helmet>
+
       <div className="container abs">
         <div className="col">
           {/* <div className="col-lg-4">
             <Intro />
           </div> */}
-          {/* <div className={"col-lg-8 "}> */}
+          <div className="post-title">{frontmatter.title}</div>
+          <div className="post-date">{frontmatter.date}</div>
+          <hr/>
           <div className="post-content" dangerouslySetInnerHTML={{ __html: html }} />
           <hr />
           {/* <div className=" my-2"> */}
@@ -74,8 +77,6 @@ const Temp = ({ data, pageContext }) => {
           </span>
         </div>
       </div>
-
-      {/* </div> */}
       {/* </div> */}
     </Page>
   )

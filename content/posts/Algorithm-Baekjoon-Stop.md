@@ -1,7 +1,7 @@
 ---
-slug: "/blog/algorithm/stop"
+slug: "/category/algorithm/stop"
 date: "2021-01-31"
-title: "sample5. 아 그만"
+title: "sample5. 아 그만??"
 author: "이효동"
 categories: ["algorithm"]
 tags: ["algorithm" , "baekjoon", "stop"]

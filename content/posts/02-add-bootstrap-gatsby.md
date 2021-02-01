@@ -1,5 +1,5 @@
 ---
-slug: "/blog/etc/add-bootstrap-to-gatsby"
+slug: "/category/etc/add-bootstrap-to-gatsby"
 date: "2019-07-13"
 title: "How to add Bootstrap to Gatsby"
 author: "Mohan"

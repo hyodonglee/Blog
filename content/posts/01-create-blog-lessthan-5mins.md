@@ -1,5 +1,5 @@
 ---
-slug: "/blog/etc/create-blog-lessthan-5mins"
+slug: "/category/etc/create-blog-lessthan-5mins"
 date: "2019-07-12"
 title: "How to create Blog in less than 5 Minutes"
 author: "Mohan"
