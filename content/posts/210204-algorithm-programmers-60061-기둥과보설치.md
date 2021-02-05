@@ -4,7 +4,7 @@ date: "2021-02-04"
 title: "[Programmers] 60061. 기둥과 보 설치"
 author: "이효동"
 categories: ["algorithm"]
-tags: ["algorithm" , "programmers", "simulation"]
+tags: ["algorithm" , "programmers", "simulation", "kakao"]
 description: "2020 카카오 블라인드 채용 코딩테스트 - 기둥과 보 설치 "
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
 ---
@@ -151,6 +151,10 @@ class Solution {
     }
 }
 ```
+<br><br>
+
+#### [통과여부]
+![image](https://user-images.githubusercontent.com/54053016/107047651-672f1580-680b-11eb-99a5-eede839fda43.png)
 <br><br>
 
 #### [느낀점]
