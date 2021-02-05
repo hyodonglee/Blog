@@ -1,11 +1,11 @@
 ---
-slug: "/category/algorithm/pillarsandbeams"
-date: "2021-02-04"
-title: "[Programmers] 60061. 기둥과 보 설치"
+slug: "/category/algorithm/snake"
+date: "2021-02-05"
+title: "[BOJ] 3190. 뱀"
 author: "이효동"
 categories: ["algorithm"]
-tags: ["algorithm" , "programmers", "simulation"]
-description: "2020 카카오 블라인드 채용 코딩테스트 - 기둥과 보 설치 "
+tags: ["algorithm" , "baekjoon", "simulation", "samsung"]
+description: "삼성SW 역량테스트 기출문제 - 뱀 "
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
 ---
 
@@ -16,7 +16,7 @@ authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d469320
 <br><br>
 
 #### [문제링크]
-- https://programmers.co.kr/learn/courses/30/lessons/60061
+- https://www.acmicpc.net/problem/3190
 <br><br>
 
 
@@ -24,15 +24,11 @@ authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d469320
 ![image](https://user-images.githubusercontent.com/54053016/106916633-bd884f80-674a-11eb-86b5-aef584878448.png)
 <br>
 문제는 기둥과 보를 조건에 맞게 설치하기를 요구하고 있다.
+
 - 기둥은 바닥 위에 있거나 보의 한쪽 끝 부분 위에 있거나, 또는 다른 기둥 위에 있어야 한다.
 - 보는 한쪽 끝 부분이 기둥 위에 있거나, 또는 양쪽 끝 부분이 다른 보와 동시에 연결되어야 한다.
 <br>
 
-![image](https://user-images.githubusercontent.com/54053016/106917014-2d96d580-674b-11eb-85a5-e67f9ccfd853.png)
-<br>
-위와 그림과 같이 기둥과 보가 서로 교차점이 생기도록 하나씩 설치해나가는데 설치 및 삭제 시 조건에 맞게 해주기만 하면 된다.
-<br>
-![image](https://user-images.githubusercontent.com/54053016/106917253-6d5dbd00-674b-11eb-8c61-19dd5597ca67.png)
 
 <br><br>
 
@@ -54,105 +50,108 @@ authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d469320
 
 #### [코드]
 ```java
-
-//programmers_60061_기둥과 보 설치
+//baekjoon_3190_뱀
 
 import java.io.*;
+import java.util.*;
 
-class Solution {
-    static boolean[][] pillars, beams;
-    static int count = 0;
-    static final int PILLAR = 0;
-    static final int BEAM = 1;
-    static final int DESTRUCT = 0;
-    static final int CONSTRUCT = 1;
-    
-    public static int[][] solution(int n, int[][] build_frame) {
-        int[][] answer = {};
-        pillars = new boolean[n+3][n+3];
-        beams = new boolean[n+3][n+3];
+public class Main {
+    static final int APPLE = 2;
+    static final int SNAKE = 1;
+    static final int L = 1;
+    static final int R = -1;
+    static final int MAX = 101;
 
-        for(int i=0;i<n+3;i++){
-            for(int j=0;j<n+3;j++){
-                pillars[i][j]=false;
-                beams[i][j]=false;
-            }
+    static int n, k, m;
+    static int map[][];
+    static int[] dx = {0, -1, 0, 1};
+    static int[] dy = {1, 0 ,-1, 0};
+    static int dir = 0;
+
+    static Deque<Pair> snakes = new LinkedList<>();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] s = br.readLine().split(" ");
+
+        n = Integer.parseInt(s[0]);
+        map= new int[n][n];
+
+        s = br.readLine().split(" ");
+        k = Integer.parseInt(s[0]);
+
+        for(int i=0;i<k;i++){
+            s = br.readLine().split(" ");
+
+            int x = Integer.parseInt(s[0])-1;
+            int y = Integer.parseInt(s[1])-1;
+
+            map[x][y]=APPLE;
+        }//사과받기
+
+        s = br.readLine().split(" ");
+        m = Integer.parseInt(s[0]);
+
+        snakes.add(new Pair(0, 0));
+        map[0][0]=SNAKE;
+        int time = 1;
+        for(int i=0;i<m;i++){
+            s = br.readLine().split(" ");
+            int sec = Integer.parseInt(s[0]);
+            char d = s[1].charAt(0);
+
+            if(d=='L') time = move(sec, time, L);
+            else time = move(sec, time, R);
         }
 
-        for (int i = 0; i < build_frame.length; i++) {
-            int x = build_frame[i][0]+1;
-            int y = build_frame[i][1]+1;
-            int shape = build_frame[i][2];//기둥인지 보인지
-            int command = build_frame[i][3];//설치할지 삭제할지
+        time = move(MAX, time, dir);
 
-            make(x, y, shape, command, n);
-        }
-
-        answer = new int[count][3];
-        int k=0;
-        for(int i=1;i<=n+1;i++){
-            for(int j=1;j<=n+1;j++){
-                if(pillars[i][j])
-                    answer[k++] = new int[]{i-1, j-1, PILLAR};
-                if(beams[i][j])
-                    answer[k++] = new int[]{i-1, j-1, BEAM};
-            }
-        }
-
-        return answer;
+        System.out.println(time);
     }
 
-    public static void make(int x, int y, int shape, int command, int n) {
-        if(command==CONSTRUCT){
-            if(shape==PILLAR){
-                if(constructPillar(x, y)){
-                    pillars[x][y]=true;
-                    count++;
-                }
-            }else{
-                if(constructBeam(x, y)){
-                    beams[x][y]=true;
-                    count++;
-                }
-            }
-        }else{//command==DESTRUCT
-            if(shape==PILLAR){
-                pillars[x][y]=false;
-            }else{
-                beams[x][y]=false;
-            }
-            count--;
+    public static int move(int sec, int time, int direction){
+        int i;
+        for(i=time;i<=sec;i++){
+            Pair head = snakes.peek();
+            int nx = head.x+dx[dir];
+            int ny = head.y+dy[dir];
 
-            if(!destruct(n)){
-                count++;
-                if(shape==PILLAR) pillars[x][y]=true;
-                if(shape==BEAM) beams[x][y]=true;
-            }
+            if(!inBound(nx, ny)) return i;
+            if(map[nx][ny]==SNAKE) return i;
 
+            snakes.addFirst(new Pair(nx, ny));
+            if(map[nx][ny]!=APPLE){
+                Pair tail = snakes.pollLast();
+                map[tail.x][tail.y]=0;
+            }
+            map[nx][ny] = SNAKE;
+
+        }//sec까지
+       dir = (dir+direction+4)%4;
+
+        return i;
+    }
+
+    public static boolean inBound(int x, int y){
+        return x>=0 && y>=0 && x<n && y<n;
+    }
+
+    public static class Pair{
+        int x;
+        int y;
+
+        public Pair(int x, int y){
+            this.x = x;
+            this.y = y;
         }
-    }
-
-    public static boolean constructPillar(int x, int y){
-        return y==1 || pillars[x][y-1] || beams[x][y] || beams[x-1][y];
-    }
-
-    public static boolean constructBeam(int x, int y){
-        return pillars[x][y-1] || pillars[x+1][y-1] || (beams[x-1][y] && beams[x+1][y]);
-    }
-
-    public static boolean destruct(int n){
-        for(int i=1;i<=n+1;i++){
-            for(int j=1;j<=n+1;j++){
-                if(pillars[i][j] && !constructPillar(i, j)) return false;
-                if(beams[i][j] && !constructBeam(i, j)) return false;
-            }
-        }
-        return true;
     }
 }
 ```
 <br><br>
 
+#### [통과여부]
+![image](https://user-images.githubusercontent.com/54053016/107047651-672f1580-680b-11eb-99a5-eede839fda43.png)
+<br><br>
+
 #### [느낀점]
-알고리즘을 알아도 코드로 구현하는 능력이 아직 많이 부족한 것 같다. 화이팅!
+골드5라서 할만했지만 난이도가 어려워지면 구현이 더 오래걸릴 것 같다.
 
