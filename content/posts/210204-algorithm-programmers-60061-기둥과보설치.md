@@ -154,7 +154,8 @@ class Solution {
 <br><br>
 
 #### [통과여부]
-![image](https://user-images.githubusercontent.com/54053016/107047651-672f1580-680b-11eb-99a5-eede839fda43.png)
+![image](https://user-images.githubusercontent.com/54053016/107049930-06550c80-680e-11eb-8dca-4797b74b69c5.png)
+
 <br><br>
 
 #### [느낀점]
