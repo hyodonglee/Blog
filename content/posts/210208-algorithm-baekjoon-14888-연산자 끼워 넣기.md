@@ -5,14 +5,12 @@ title: "[BOJ] 14888. 연산자 끼워 넣기"
 author: "이효동"
 categories: ["algorithm"]
 tags: ["algorithm" , "baekjoon", "recursive", "samsung", "simulation", "dfs"]
-description: "진행중"
+description: "백트래킹을 이용하여 모든 연산자 끼워넣는 상황을 검사해보는 문제이다."
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
 ---
 
 
 #### [분류]
-- 탐색
-- 시뮬레이션
 - 재귀
 
 
