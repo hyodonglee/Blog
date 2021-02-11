@@ -5,7 +5,7 @@ title: "[BOJ] 18428. 감시 피하기"
 author: "이효동"
 categories: ["algorithm"]
 tags: ["algorithm" , "baekjoon", "recursive", "simulation", "dfs"]
-description: "진행중"
+description: "재귀를 이용하여 푸는 단순한 백트래킹 문제이다."
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
 ---
 
