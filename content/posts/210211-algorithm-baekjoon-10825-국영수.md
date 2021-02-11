@@ -1,5 +1,5 @@
 ---
-slug: "/category/algorithm/baekjoon/14888"
+slug: "/category/algorithm/baekjoon/10825"
 date: "2021-02-11"
 title: "[BOJ] 10825. 국영수"
 author: "이효동"
