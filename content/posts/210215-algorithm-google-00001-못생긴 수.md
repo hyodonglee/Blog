@@ -1,83 +1,87 @@
 ---
-slug: "/category/algorithm/baekjoon/1715"
-date: "2021-02-11"
-title: "[BOJ] 1715. 카드 정렬하기"
+slug: "/category/algorithm/google/1"
+date: "2021-02-15"
+title: "[Google] 못생긴 수"
 author: "이효동"
 categories: ["algorithm"]
-tags: ["algorithm" , "baekjoon", "sorting", "priority queue" ]
-description: "우선순위 큐를 사용하여 끊임없이 정렬하면서 최소 값을 더하는 문제이다."
+tags: ["algorithm" , "google", "dp" ]
+description: "dp를 이용하여 못생긴 수를 구하는 문제이다."
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"
 ---
 
 
 #### [분류]
-- 소팅
+- 다이나믹 프로그래밍
 
 
 <br><br>
 
 #### [문제링크]
-- https://www.acmicpc.net/problem/1715
+- 링크없음
+
+못생긴 수란 오직 2, 3, 5만을 소인수로 가지는 수를 의미합니다. 다시 말해 오직 2, 3, 5를 약수로 가지는 합성수를 의미합니다. 1은 못생긴 수라고 가정합니다. 따라서 못생긴 수들을 {1, 2, 3, 4, 5 , 6, 8, 9, 10, 12, 15, ...} 순으로 이어지게 됩니다. 이때, n번째 못생긴 수를 찾는 프로그램을 작성하세요. 예를 들어 11번째 못생긴 수는 15입니다.
 <br><br>
 
 
 #### [요구사항]
 
-1. 정렬된 숫자묶음 카드를 합쳐서 하나로 만들되 최소한의 횟수로 가능하게 하여아한다.<br><br> 
+1. n번째 못생긴 수를 찾아야한다.<br><br> 
 
-
-
-<br><br>
 
 #### [풀이]
 
-1. 우선순위 큐를 만들고 값들을 저장한다.<br><br>
+1. dp를 이용하여 2,3,5를 가장 작은 못생긴 수에 곱해주는 방식으로 구한다.<br><br>
 
-2. 큐가 empty 상태가 될때 까지 두개씩 꺼내서 합하고 다시 큐에 넣기를 반복한다. 그러면 자동으로 가장 작은 수끼리 계속 더할 수 있다.
-
-
+2. 가장 작은 못생긴 수를 구하기 위해서는 마지막으로 2, 3, 5를 곱했던 수들에 대한 index가 저장되어 있어야 하기 때문에 i2, i3, i5라는 index 3개를 이용하여 dp를 구현한다.
 <br><br>
 
 #### [코드]
 ```java
-//baekjoon_1715_카드 정렬하기
+//Google_못생긴수
 
 import java.io.*;
 import java.lang.*;
-import java.util.*;
 public class Main {
-    static PriorityQueue<Integer> pq = new PriorityQueue<>();
     static int n;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
 
-        for(int i=0;i<n;i++)
-            pq.add(Integer.parseInt(br.readLine()));
+        int dp[] = new int[n];
 
-        int value = 0;
-        int cnt = 0;
-        long ans = 0;
-        while(!pq.isEmpty()){
-            if(cnt%2==0) value = pq.poll();
-            else{
-                value+=pq.poll();
-                pq.add(value);
-                ans+=value;
+        dp[0]=1;
+        int i2=0, i3=0, i5=0;
+        int next2 = 2, next3 = 3, next5 = 5;
+
+        for(int i=1;i<n;i++){
+            dp[i]=Math.min(next2, next3);
+            dp[i]=Math.min(dp[i], next5);
+
+            if(dp[i]==next2){
+                i2++;
+                next2 = dp[i2]*2;
             }
-            cnt++;
+            if(dp[i]==next3){
+                i3++;
+                next3=dp[i3]*3;
+            }
+            if(dp[i]==next5){
+                i5++;
+                next5=dp[i5]*5;
+            }
         }
-        System.out.println(ans);
+        System.out.println(dp[n-1]);
     }
 }
+
 ```
 <br><br>
 
 #### [통과여부]
-![image](https://user-images.githubusercontent.com/54053016/107636857-9c76b000-6cb0-11eb-9a20-6f208d601ab2.png)
+- 없음
 
 
 <br><br>
 
 #### [느낀점]
-처음에는 단순하게 오름차순 소팅 후에 앞에서부터 더해주면 된다고 생각했는데 더했을 때의 수가 그 다음에 더할 수보다 더 커지면 문제가 생긴다는 것을 발견하는 것이 어려웠다.
+알고리즘 사이트에 있는 문제는 아니고 책에 있는 문제였는데 인상깊었다. 단순 점화식으로 생각하는게 아니라 좀 더 폭넓게 생각하는 계기가 되었다.
