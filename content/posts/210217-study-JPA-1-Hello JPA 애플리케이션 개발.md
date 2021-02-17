@@ -3,7 +3,7 @@ slug: "/category/study/jpa/1"
 date: "2021-02-17"
 title: "[JPA] 1. Spring JPA 기초"
 author: "이효동"
-categories: ["study"]
+categories: ["jpa"]
 tags: ["study" , "jpa" ]
 description: "Hello JPA - 애플리케이션 개발"
 authorImg: "https://user-images.githubusercontent.com/54053016/106390261-d4693200-642a-11eb-8ac8-eb8203cf74b9.png"

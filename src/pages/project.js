@@ -8,8 +8,8 @@ const Project = () => {
   const data = useStaticQuery(graphql`
     query{
         allMarkdownRemark(
-          sort: {fields: frontmatter___date, order: DESC}, limit: 10
-          filter: { frontmatter: { categories: {in:"project"} }}
+          sort: {fields: frontmatter___date, order: DESC}, limit: 2000
+          filter: { frontmatter: { categories: {in:"study"} }}
           ) {
           
             edges {
