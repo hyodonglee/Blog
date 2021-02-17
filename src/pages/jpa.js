@@ -4,12 +4,13 @@ import Page from '../components/PageLayout'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from "gatsby"
 
-const Project = () => {
+const SpringJPA = () => {
   const data = useStaticQuery(graphql`
     query{
         allMarkdownRemark(
-          sort: {fields: frontmatter___date, order: DESC}, limit: 2000
-          filter: { frontmatter: { categories: {in:"study"} }}
+          sort: {fields: frontmatter___date, order: DESC}, 
+          limit: 2000
+          filter: { frontmatter: { categories: {in:"SpringJPA"} }}
           ) {
           
             edges {
@@ -51,4 +52,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default SpringJPA
