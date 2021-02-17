@@ -40,7 +40,7 @@ function Navbar() {
                         <NavLink class="nav-link" to = "/algorithm">Algorithm</NavLink>
                     </li>
                     <li class="nav-item mr-5">
-                        <NavLink class="nav-link" to = "/SpringJPA">SpringJPA</NavLink>
+                        <NavLink class="nav-link" to = "/springjpa">SpringJPA</NavLink>
                     </li>
                     <li class="nav-item mr-5">
                         <NavLink class="nav-link" to = "/tags">Tags</NavLink>

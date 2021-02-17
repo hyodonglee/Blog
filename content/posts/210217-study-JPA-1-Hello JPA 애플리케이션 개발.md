@@ -1,5 +1,5 @@
 ---
-slug: "/category/study/SpringJPA/1"
+slug: "/category/study/springjpa/1"
 date: "2021-02-17"
 title: "[JPA] 1. Spring JPA 기초"
 author: "이효동"
