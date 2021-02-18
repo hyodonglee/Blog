@@ -1,6 +1,6 @@
 ---
-slug: "/category/study/springjpa/1"
-date: "2021-02-17"
+slug: "/category/study/springjpa/2"
+date: "2021-02-18"
 title: "[JPA] 2. 영속성 컨텍스트"
 author: "이효동"
 categories: ["SpringJPA"]
@@ -69,5 +69,13 @@ em.remove(member);
 - 변경 감지(Dirth Checking)
 - 지연 로딩(Lazy Loading)
 <br>
+
+[플러시의 개념과 호출 방법]<br>
+플러시는 영속성 컨텍스트의 변경 내용을 데이터베이스에 반영하는 것입니다.<br>
+다음과 같은 상황에서 플러시가 발생합니다.<br>
+- em.flush() : 강제로 직접 호출하는 경우
+- commit : 커밋할 때 자동으로 호출
+- JPQL 쿼리 실행 : 플러시 자동으로 호출
+
 
  본 게시글은 우아한형제들 김영한님의 강의 '자바 ORM 표준 JPA 프로그래밍 - 기본편'을 들으면서 JPA에 대해 정리한 글입니다.<br>
