@@ -10,7 +10,7 @@ const DataProcessing = () => {
         allMarkdownRemark(
           sort: {fields: frontmatter___date, order: DESC}
           limit: 2000
-          filter: { frontmatter: { categories: {in:"dataprocessing"} }}
+          filter: { frontmatter: { categories: {in:"DataProcessing"} }}
           ) {
           
             edges {
