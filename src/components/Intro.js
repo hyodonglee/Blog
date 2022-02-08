@@ -40,7 +40,8 @@ function Intro() {
 
             <p className="card-subtitle mt-2">
                 안녕하세요. 이효동입니다. <br/>
-                저의 블로그에 오신 것을 환영합니다.
+                효율적인 관리와 범용성을 위해 <br/>
+                https://velog.io/@hyodonglee 로 이전했습니다.<br/>
             </p>
             <Link className="btn btn-dark my-3" to="about">Who am I?</Link>
 

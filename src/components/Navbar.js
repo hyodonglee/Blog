@@ -43,7 +43,7 @@ function Navbar() {
                         <NavLink class="nav-link" to = "/springjpa">SpringJPA</NavLink>
                     </li>
                     <li class="nav-item mr-5">
-                        <NavLink class="nav-link" to = "/dataprocessing">정보처리기사</NavLink>
+                        <NavLink class="nav-link" to = "/study">개인공부</NavLink>
                     </li>
                     <li class="nav-item mr-5">
                         <NavLink class="nav-link" to = "/tags">Tags</NavLink>
